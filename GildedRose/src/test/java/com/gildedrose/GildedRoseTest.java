@@ -29,6 +29,13 @@ class GildedRoseTest {
         assertThat(app.items[0].quality, is(10));
     }
 
-    
+    // quality < 6
+    @Test
+    void test_qualityInferieur(){
+        Item[] items = new Item[] { new Item("xml", 5, 50)};
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertThat(app.items[0].quality, is(49));
+    }
 
 }
