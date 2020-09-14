@@ -60,4 +60,12 @@ class GildedRoseTest {
 
     }
 
+    // sellIn < 0
+    void sellInfZero(){
+        Item[] items = new Item[] {new Item("xml", -5, 50)};
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertThat(app.items[0].sellIn, is(-6));
+    }
+
 }
