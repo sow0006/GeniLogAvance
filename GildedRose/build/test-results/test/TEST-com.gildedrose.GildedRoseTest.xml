@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.gildedrose.GildedRoseTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-09-14T14:56:34" hostname="ada.local.isima.fr" time="0.013">
+<testsuite name="com.gildedrose.GildedRoseTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-09-14T14:58:39" hostname="ada.local.isima.fr" time="0.012">
   <properties/>
-  <testcase name="test_sellIn()" classname="com.gildedrose.GildedRoseTest" time="0.011"/>
+  <testcase name="test_sellIn()" classname="com.gildedrose.GildedRoseTest" time="0.01"/>
   <testcase name="foo()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
