@@ -21,12 +21,12 @@ class GildedRoseTest {
         app.updateQuality();
         assertThat(app.items[0].sellIn, is(5));
     }
-
+    @Test
     void test_quality(){
         Item[] items = new Item[] { new Item("xml", 6, 10)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertThat(app.items[0].quality, is(10));
+        assertThat(app.items[0].quality, is(9));
     }
 
     // quality < 50
@@ -46,6 +46,17 @@ class GildedRoseTest {
         app.updateQuality();
         assertThat(app.items[0].sellIn, is(4));
         assertThat(app.items[0].quality, is(48));
+
+    }
+
+    // quality  > 0 et sellIn  < 0
+    @Test
+    void sellQuality_InfSup(){
+        Item[] items = new Item[] {new Item("xml", -5, 48)};
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertThat(app.items[0].sellIn, is(-6));
+        assertThat(app.items[0].quality, is(46));
 
     }
 
