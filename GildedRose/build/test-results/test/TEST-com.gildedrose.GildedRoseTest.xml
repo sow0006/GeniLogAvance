@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.gildedrose.GildedRoseTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-09-14T15:23:26" hostname="ada.local.isima.fr" time="0.019">
+<testsuite name="com.gildedrose.GildedRoseTest" tests="20" skipped="0" failures="0" errors="0" timestamp="2020-09-21T14:49:58" hostname="ada.local.isima.fr" time="0.025">
   <properties/>
-  <testcase name="test_SellQuality()" classname="com.gildedrose.GildedRoseTest" time="0.011"/>
-  <testcase name="test_quality()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
-  <testcase name="test_sellIn()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="test_SellQuality()" classname="com.gildedrose.GildedRoseTest" time="0.01"/>
+  <testcase name="quality_test1()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="quality_test2()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="quality_test3()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="quality_test4()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="sellIn_test1()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="sellIn_test2()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="sellIn_test3()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="test_quality()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="qualityTest()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="quantitySup()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="sellInTest()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="test_sellIn()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="quality_test()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
   <testcase name="foo()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
   <testcase name="sellQuality_InfSup()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
-  <testcase name="test_qualityInferieur()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="qualityTestNull()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="test_qualityInferieur()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="sellIn_test()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="sellInfZero()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
