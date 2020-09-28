@@ -44,7 +44,7 @@ class GildedRoseTest {
 	
 	@Test
 	void test_sellIn() {
-		Item[] items = new Item[] { new Item("xml", 6, 10) };
+		Item[] items = new Item[] { new Item("Elixir of the Mongoose", 6, 10) };
 		GildedRose app = new GildedRose(items);
 		app.updateQuality();
 		assertThat(app.items[0].sellIn, is(5));
@@ -62,7 +62,7 @@ class GildedRoseTest {
 
 	@Test
 	void test_qualityInferieur() {
-		Item[] items = new Item[] { new Item("xml", 5, 50) };
+		Item[] items = new Item[] { new Item("Elixir of the Mongoose", 5, 50) };
 		GildedRose app = new GildedRose(items);
 		app.updateQuality();
 		assertThat(app.items[0].quality, is(49));
@@ -72,11 +72,11 @@ class GildedRoseTest {
 
 	@Test
 	void test_SellQuality() {
-		Item[] items = new Item[] { new Item("xml", 5, 49) };
+		Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", 5, 49) };
 		GildedRose app = new GildedRose(items);
 		app.updateQuality();
-		assertThat(app.items[0].sellIn, is(4));
-		assertThat(app.items[0].quality, is(48));
+		assertThat(app.items[0].sellIn, is(5));
+		assertThat(app.items[0].quality, is(49));
 
 	}
 
@@ -84,18 +84,18 @@ class GildedRoseTest {
 
 	@Test
 	void sellQuality_InfSup() {
-		Item[] items = new Item[] { new Item("xml", -5, 48) };
+		Item[] items = new Item[] { new Item("Aged Brie", -5, 48) };
 		GildedRose app = new GildedRose(items);
 		app.updateQuality();
 		assertThat(app.items[0].sellIn, is(-6));
-		assertThat(app.items[0].quality, is(46));
+		assertThat(app.items[0].quality, is(50));
 
 	}
 	 
     // sellIn < 0
 	@Test
     void sellInfZero(){
-        Item[] items = new Item[] {new Item("xml", -5, 50)};
+        Item[] items = new Item[] {new Item("Aged Brie", -5, 50)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertThat(app.items[0].sellIn,is(-6));
@@ -119,15 +119,15 @@ class GildedRoseTest {
 	
 	@Test
 	void quality_test1() {
-		Item[] items = new Item[] {new Item("xml", 0, 5)};
+		Item[] items = new Item[] {new Item("Aged Brie", 0, 5)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertThat(app.items[0].quality,is(3));
+        assertThat(app.items[0].quality,is(7));
 	}
 	
 	@Test
 	void quality_test2() {
-		Item[] items = new Item[] {new Item("xml", 0, -5)};
+		Item[] items = new Item[] {new Item("Sulfuras, Hand of Ragnaros", 0, -5)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertThat(app.items[0].quality,is(-5));
@@ -135,7 +135,7 @@ class GildedRoseTest {
 	
 	@Test
 	void quality_test3() {
-		Item[] items = new Item[] {new Item("xml", -7, -5)};
+		Item[] items = new Item[] {new Item("Sulfuras, Hand of Ragnaros", -7, -5)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertThat(app.items[0].quality,is(-5));
@@ -143,10 +143,10 @@ class GildedRoseTest {
 	
 	@Test
 	void quality_test4() {
-		Item[] items = new Item[] {new Item("xml", -1, 5)};
+		Item[] items = new Item[] {new Item("Sulfuras, Hand of Ragnaros", -1, 5)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertThat(app.items[0].quality,is(3));
+        assertThat(app.items[0].quality,is(5));
 	}
 
 	@Test
@@ -175,7 +175,7 @@ class GildedRoseTest {
 	
 	@Test
 	void sellIn_test3() {
-		Item[] items = new Item[] {new Item("xml", 7, -50)};
+		Item[] items = new Item[] {new Item("Aged Brie", 7, -50)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertThat(app.items[0].sellIn,is(6));
