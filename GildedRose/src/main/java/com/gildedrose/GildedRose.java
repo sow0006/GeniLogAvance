@@ -6,10 +6,14 @@ class GildedRose {
 	private static final String AGED_BRIE = "Aged Brie";
 	private static final String BACKSTAGE = "Backstage passes to a TAFKAL80ETC concert";
 	
-
     public GildedRose(Item[] items) {
         this.items = items;
     }
+
+    public static void incrementQualityNotMax(Item item){
+        if(item.quality < 50)
+            item.updateQuality(1);
+    } 
 
     public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
