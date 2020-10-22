@@ -3,6 +3,7 @@ package com.gildedrose;
 import java.text.BreakIterator;
 
 class GildedRose {
+
     Item[] items;
     private static final String SULFURAS = "Sulfuras, Hand of Ragnaros";
 	private static final String AGED_BRIE = "Aged Brie";
@@ -61,7 +62,7 @@ class GildedRose {
     }
 
     public void updateQuality() {
-        for (int i = 0; i < items.length; i++) {
+        for (int i = 0; i < items.length; i++) 
             updateItem(items[i]);
     }
 }
