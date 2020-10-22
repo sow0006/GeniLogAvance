@@ -25,17 +25,17 @@ class GildedRose {
 <span class="fc" id="L25">                    items[i].quality = items[i].quality + 1;</span>
 
 <span class="fc bfc" id="L27" title="All 2 branches covered.">                    if (items[i].name.equals(&quot;Backstage passes to a TAFKAL80ETC concert&quot;)) {</span>
-<span class="pc bpc" id="L28" title="1 of 4 branches missed.">                        if (items[i].sellIn &lt; 11 &amp;&amp; items[i].sellIn &lt; 6) {</span>
-<span class="pc bpc" id="L29" title="1 of 2 branches missed.">                            if (items[i].quality &lt; 50) {</span>
-<span class="nc" id="L30">                                items[i].quality = items[i].quality + 1;</span>
+<span class="fc bfc" id="L28" title="All 2 branches covered.">                        if (items[i].sellIn &lt; 11) {</span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">                            if (items[i].quality &lt; 50) {</span>
+<span class="fc" id="L30">                                items[i].quality = items[i].quality + 1;</span>
                             }
                         }
 
-                        /* if (items[i].sellIn &lt; 6) {
-                            if (items[i].quality &lt; 50) {
-                                items[i].quality = items[i].quality + 1;
+<span class="fc bfc" id="L34" title="All 2 branches covered.">                        if (items[i].sellIn &lt; 6) {</span>
+<span class="fc bfc" id="L35" title="All 2 branches covered.">                            if (items[i].quality &lt; 50) {</span>
+<span class="fc" id="L36">                                items[i].quality = items[i].quality + 1;</span>
                             }
-                        } */
+                        }
                     }
                 }
             }

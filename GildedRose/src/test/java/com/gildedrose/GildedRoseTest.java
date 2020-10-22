@@ -6,174 +6,278 @@ import static org.hamcrest.Matchers.*;
 
 class GildedRoseTest {
 
-	@Test
-	void foo() {
-		Item[] items = new Item[] {new Item("foo", 0, 0)};
-		GildedRose app = new GildedRose(items);
-		app.updateQuality();
-		assertThat(app.items[0].name, is("foo"));
-	}
-	
-	//quality = quality + 1
-	@Test
-	void qualityTest() {
-		Item[] items = new Item[] {new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49)};
-		GildedRose app = new GildedRose(items);
-		app.updateQuality();
-		assertThat(app.items[0].quality, is(50));
-	}
+    private Item[] items = new Item[] { new Item("+5 Dexterity Vest", 10, 20) };
+    private GildedRose app = new GildedRose(items);
 
-	//Quality = quality - quality
-	@Test
-	void qualityTestNull() {
-		Item[] items = new Item[] {new Item("Backstage passes to a TAFKAL80ETC concert", -10, 49)};
-		GildedRose app = new GildedRose(items);
-		app.updateQuality();
-		assertThat(app.items[0].quality, is(0));
-	}
-	
-	@Test
-	void sellInTest() {
-		Item[] items = new Item[] {new Item("Backstage passes to a TAFKAL80ETC concert", -6, 50)};
-		GildedRose app = new GildedRose(items);
-		app.updateQuality();
-		assertThat(app.items[0].sellIn, is(-7));
-	}
-	
-	@Test
-	void testSellIn() {
-		Item[] items = new Item[] {new Item("Elixir of the Mongoose", 6, 10)};
-		GildedRose app = new GildedRose(items);
-		app.updateQuality();
-		assertThat(app.items[0].sellIn, is(5));
-	}
+    /* Tests sur produits normaux */
 
-	@Test
-	void testQuality() {
-		Item[] items = new Item[] {new Item("xml", 6, 10) };
-		GildedRose app = new GildedRose(items);
-		app.updateQuality();
-		assertThat(app.items[0].quality, is(9));
-	}
+    @Test 
+    void testDecSellInQuality() {
 
-	// quality < 50
-	@Test
-	void testQualityInferieur() {
-		Item[] items = new Item[] { new Item("Elixir of the Mongoose", 5, 50) };
-		GildedRose app = new GildedRose(items);
-		app.updateQuality();
-		assertThat(app.items[0].quality, is(49));
-	}
+        app.updateQuality();
+        assertThat("diminution des valeurs sellIn et quality par le sytème à la fin de chaque journéé",
+                items[0].sellIn == 9 && items[0].quality == 19); 
 
-	// quality < 50 et sellIn < 6
-	@Test
-	void testSellQuality() {
-		Item[] items = new Item[] {new Item("Sulfuras, Hand of Ragnaros", 5, 49) };
-		GildedRose app = new GildedRose(items);
-		app.updateQuality();
-		assertThat(app.items[0].sellIn, is(5));
-		assertThat(app.items[0].quality, is(49));
+    }
 
-	}
+    @Test
+    void testQualityNonNegative() {
+        items[0].quality = 15;
+        app.updateQuality();
+        assertThat("La qualité n'est pas négative", items[0].quality > 0);
 
-	//quality > 0 et sellIn < 0
-	@Test
-	void sellQualityInfSup() {
-		Item[] items = new Item[] {new Item("Aged Brie", -5, 48)};
-		GildedRose app = new GildedRose(items);
-		app.updateQuality();
-		assertThat(app.items[0].sellIn, is(-6));
-		assertThat(app.items[0].quality, is(50));
-	}
-	 
-    // sellIn < 0
-	@Test
-    void sellInfZero(){
-		Item[] items = new Item[] {new Item("Aged Brie", -5, 50)};
-		GildedRose app = new GildedRose(items);
-		app.updateQuality();
-		assertThat(app.items[0].sellIn, is(-6));
-	}
-	
-	@Test
-	void quantitySup() {
-		Item[] items = new Item[] {new Item("xml", -5, 50)};
-		GildedRose app = new GildedRose(items);
-		app.updateQuality();
-		assertThat(app.items[0].quality, is(48));
-	}
-	
-	@Test
-	void qualityTests() {
-		Item[] items = new Item[] {new Item("xml", 5, 50)};
-		GildedRose app = new GildedRose(items);
-		app.updateQuality();
-		assertThat(app.items[0].quality, is(49));
-	}
-	
-	@Test
-	void qualityTest1() {
-		Item[] items = new Item[] {new Item("Aged Brie", 0, 5)};
-		GildedRose app = new GildedRose(items);
-		app.updateQuality();
-		assertThat(app.items[0].quality, is(7));
-	}
-	
-	@Test
-	void qualityTest2() {
-		Item[] items = new Item[] {new Item("Sulfuras, Hand of Ragnaros", 0, -5)};
-		GildedRose app = new GildedRose(items);
-		app.updateQuality();
-		assertThat(app.items[0].quality, is(-5));
-	}
-	
-	@Test
-	void qualityTest3() {
-		Item[] items = new Item[] {new Item("Sulfuras, Hand of Ragnaros", -7, -5)};
-		GildedRose app = new GildedRose(items);
-		app.updateQuality();
-		assertThat(app.items[0].quality, is(-5));
-	}
-	
-	@Test
-	void qualityTest4() {
-		Item[] items = new Item[] {new Item("Sulfuras, Hand of Ragnaros", -1, 5)};
-		GildedRose app = new GildedRose(items);
-		app.updateQuality();
-		assertThat(app.items[0].quality, is(5));
-	}
+    }
 
-	@Test
-	void sellInTestt() {
-		Item[] items = new Item[] {new Item("xml", 0, 5)};
-		GildedRose app = new GildedRose(items);
-		app.updateQuality();
-		assertThat(app.items[0].sellIn, is(-1));
-	}
-	
-	@Test
-	void sellInTest1() {
-		Item[] items = new Item[] {new Item("xml", 0, -5)};
-		GildedRose app = new GildedRose(items);
-		app.updateQuality();
-		assertThat(app.items[0].sellIn, is(-1));
-	}
-	
-	@Test
-	void sellInTest2() {
-		Item[] items = new Item[] {new Item("xml", -1, -5)};
-		GildedRose app = new GildedRose(items);
-		app.updateQuality();
-		assertThat(app.items[0].sellIn, is(-2));
-	}
-	
-	@Test
-	void sellInTest3() {
-		Item[] items = new Item[] {new Item("Aged Brie", 7, -50)};
-		GildedRose app = new GildedRose(items);
-		app.updateQuality();
-		assertThat(app.items[0].sellIn, is(6));
-	}	
+    @Test
+    void testSellInPositiveQualityIsZero() {
+        items[0].quality = 0;
+        app.updateQuality();
+        assertThat("dimininution produit de qualité nulle ", items[0].quality == 0);
+    }
 
-	
+    @Test 
+    void testSellInNegativeQualityPositive() {
+        items[0].quality = 20;
+        items[0].sellIn = -10;
+        app.updateQuality();
+        assertThat("produit qualité positive et sellIn négatif ", items[0].quality < 20);
+    
+    }
+
+    @Test 
+    void testSellInAndQualityNegative() {
+        items[0].quality = -10;
+        items[0].sellIn = -10;
+        app.updateQuality();
+        assertThat("dimininution produit de qualité négative et sellIn négatif ",
+                items[0].quality == -10 && items[0].sellIn == -11);
+    }
+
+    @Test 
+    void testQualityNoMoreThan50() {
+        items[0].quality = 30;
+        app.updateQuality();
+        assertThat("La qualité n'est pas plus de 50", items[0].quality <= 50);
+    }
+
+    @Test 
+    void testSulfurasConstantQuality() {
+        items[0].name = "Sulfuras, Hand of Ragnaros";
+        items[0].quality = 20;
+        items[0].sellIn = 10;
+        app.updateQuality();
+        assertThat("Sulfuras ne perd pas en qualité", items[0].quality == 20);
+
+    }
+
+    /**
+     * TESTS SUR DU SULFURAS
+     */
+
+    @Test
+    void testSulfurasQualityLessThan50SellInLessThan6() {
+        Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", 5, 49) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertThat(app.items[0].sellIn, is(5));
+        assertThat(app.items[0].quality, is(49));
+
+    }
+
+    @Test
+    void testSulfurasConstantNegativeQuality() {
+        Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", 0, -5) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertThat(app.items[0].quality, is(-5));
+    }
+
+    @Test
+    void testSulfurasQualSellInNegative() {
+        Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", -7, -5) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertThat(app.items[0].quality, is(-5));
+    }
+
+    @Test
+    void testSulfururasSellInNegQualPositive() {
+        Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", -1, 5) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertThat(app.items[0].quality, is(5));
+    }
+
+    /**
+     * TESTS SUR DU AGED BRIE
+     */
+    @Test
+    void testAgedBrieQualityEqualsTo50() {
+        items[0].name = "Aged Brie";
+        items[0].quality = 50;
+        app.updateQuality();
+        assertThat("Qualité égale à 50 ", items[0].quality == 50);
+
+    }
+
+    @Test 
+    void testAgedBrieSellInLessThan6() {
+        items[0].name = "Aged Brie";
+        items[0].quality = 20;
+        items[0].sellIn = 3;
+        app.updateQuality();
+        assertThat("Aged bried de sellIn 3", items[0].quality == 21 && items[0].sellIn == 2);
+
+    }
+
+    @Test
+    void testAgedBrieSellInLessThan11() {
+        items[0].name = "Aged Brie";
+        items[0].quality = 20;
+        items[0].sellIn = 8;
+        app.updateQuality();
+        assertThat("Aged Brie moins 10 de sellIn", items[0].quality == 21 && items[0].sellIn == 7);
+
+    }
+
+    @Test
+    void testAgedBrieSellInMoreThan10() {
+        items[0].name = "Aged Brie";
+        items[0].quality = 20;
+        items[0].sellIn = 15;
+        app.updateQuality();
+        assertThat("Aged Brie plus de 10 de sellIn", items[0].quality == 21 && items[0].sellIn == 14);
+    }
+
+    @Test
+    void testAgedBrieQualityGreaterThan50SellInLessThan11() {
+        items[0].name = "Aged Brie";
+        items[0].quality = 49;
+        items[0].sellIn = 8;
+        app.updateQuality();
+        assertThat("Backstage de 8 de sellIn et 49 de quality", items[0].quality == 50 && items[0].sellIn == 7);
+
+    }
+
+    @Test
+    void testAgedBrieQualityGreaterThan50SellInLessThan6() {
+        items[0].name = "Aged Brie";
+        items[0].quality = 49;
+        items[0].sellIn = 3;
+        app.updateQuality();
+        assertThat("Backstage de 8 de sellIn et 49 de quality", items[0].quality == 50 && items[0].sellIn == 2);
+
+    }
+
+    @Test
+    void testAgedBrieNegativeSellInQualityMoreThan50() {
+        items[0].name = "Aged Brie";
+        items[0].quality = 60;
+        items[0].sellIn = -10;
+        app.updateQuality();
+        assertThat("Backstage de  de sellIn et 49 de quality", items[0].quality == 60 && items[0].sellIn == -11);
+
+    }
+
+    @Test
+    void testAgedBrieNegativeSellInQualityMoreLess50() {
+        items[0].name = "Aged Brie";
+        items[0].quality = 30;
+        items[0].sellIn = -10;
+        app.updateQuality();
+        assertThat("Backstage de 30 sellIn et -10 de quality", items[0].quality == 32 && items[0].sellIn == -11);
+
+    }
+
+    /**
+     * TESTS SUR DU BACKSTAGE
+     */
+
+    @Test
+    void testBackStageQualityEqualsTo50() {
+
+        items[0].name = "Backstage passes to a TAFKAL80ETC concert";
+        items[0].quality = 50;
+        app.updateQuality();
+        assertThat("Qualité égale à 50 ", items[0].quality == 50);
+
+    }
+
+    @Test
+    void testBackStageSellInLessThan6() {
+        items[0].name = "Backstage passes to a TAFKAL80ETC concert";
+        items[0].quality = 25;
+        items[0].sellIn = 2;
+        app.updateQuality();
+        assertThat("Backstage", items[0].quality == 28 && items[0].sellIn == 1);
+    }
+
+    @Test
+    void testBackStageSellInf11QualInf50() {
+        Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 11, 49) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertThat(app.items[0].quality, is(50));
+    }
+
+    @Test
+    void testBackStageSellInLessThan11() {
+        items[0].name = "Backstage passes to a TAFKAL80ETC concert";
+        items[0].quality = 21;
+        items[0].sellIn = 8;
+        app.updateQuality();
+        assertThat("Backstage 8 de sellIn", items[0].quality == 23 && items[0].sellIn == 7);
+    }
+
+    @Test
+    void testBackStageQualityGreaterThan50SellInLessThan11() {
+        items[0].name = "Backstage passes to a TAFKAL80ETC concert";
+        items[0].quality = 49;
+        items[0].sellIn = 8;
+        app.updateQuality();
+        assertThat("Backstage de 8 de sellIn et 49 de quality", items[0].quality == 50 && items[0].sellIn == 7);
+
+    }
+
+    @Test
+    void testBackStageQualityGreaterThan50SellInLessThan6() {
+        items[0].name = "Backstage passes to a TAFKAL80ETC concert";
+        items[0].quality = 49;
+        items[0].sellIn = 3;
+        app.updateQuality();
+        assertThat("Backstage de 3 de sellIn et 49 de quality", items[0].quality == 50 && items[0].sellIn == 2);
+
+    }
+
+    @Test
+    void testBkgStageQualityNegativeSellInLessThan6() {
+
+        items[0].name = "Backstage passes to a TAFKAL80ETC concert";
+        items[0].quality = -20;
+        items[0].sellIn = 0;
+        app.updateQuality();
+        assertThat("Backstage de 0 de sellIn et 20 de quality", items[0].quality == 0 && items[0].sellIn == -1);
+
+    }
+
+    @Test
+    void testBckStageSellInNegativeQualityLessThan50() {
+        items[0].name = "Backstage passes to a TAFKAL80ETC concert";
+        items[0].quality = 20;
+        items[0].sellIn = -15;
+        app.updateQuality();
+        assertThat("Backstage de 0 de sellIn et 20 de quality", items[0].quality == 0);
+    }
+
+    @Test
+    void testBckStageQualityMoreThan50() {
+
+        items[0].name = "Backstage passes to a TAFKAL80ETC concert";
+        items[0].quality = 70;
+        items[0].sellIn = 15;
+        app.updateQuality();
+        assertThat("Backstage dépassant 50 de qualité", items[0].quality == 70 && items[0].sellIn == 14);
+
+    }
+
 }
