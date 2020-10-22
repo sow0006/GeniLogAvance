@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.gildedrose.GildedRoseTest" tests="28" skipped="0" failures="0" errors="0" timestamp="2020-10-22T13:19:59" hostname="sow0006-HP-Notebook" time="0.055">
+<testsuite name="com.gildedrose.GildedRoseTest" tests="28" skipped="0" failures="0" errors="0" timestamp="2020-10-22T13:32:15" hostname="sow0006-HP-Notebook" time="0.048">
   <properties/>
-  <testcase name="testSulfurasQualityLessThan50SellInLessThan6()" classname="com.gildedrose.GildedRoseTest" time="0.012"/>
+  <testcase name="testSulfurasQualityLessThan50SellInLessThan6()" classname="com.gildedrose.GildedRoseTest" time="0.011"/>
   <testcase name="testSulfurasConstantQuality()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="testAgedBrieQualityEqualsTo50()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
   <testcase name="testSellInNegativeQualityPositive()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
-  <testcase name="testSellInPositiveQualityIsZero()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
-  <testcase name="testAgedBrieSellInLessThan11()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
-  <testcase name="testBkgStageQualityNegativeSellInLessThan6()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="testSellInPositiveQualityIsZero()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="testAgedBrieSellInLessThan11()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="testBkgStageQualityNegativeSellInLessThan6()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
   <testcase name="testAgedBrieNegativeSellInQualityMoreLess50()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="testAgedBrieNegativeSellInQualityMoreThan50()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="testBackStageQualityGreaterThan50SellInLessThan6()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
   <testcase name="testSulfururasSellInNegQualPositive()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
   <testcase name="testSellInAndQualityNegative()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="testBackStageQualityGreaterThan50SellInLessThan11()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="test5()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="testBackStageQualityGreaterThan50SellInLessThan11()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
   <testcase name="testAgedBrieQualityGreaterThan50SellInLessThan11()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="testBackStageSellInLessThan6()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="testBackStageSellInLessThan6()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="testAgedBrieSellInMoreThan10()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
   <testcase name="testQualityNonNegative()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="testAgedBrieQualityGreaterThan50SellInLessThan6()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="testQualityNoMoreThan50()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
-  <testcase name="testSulfurasQualSellInNegative()" classname="com.gildedrose.GildedRoseTest" time="0.004"/>
-  <testcase name="testDecSellInQuality()" classname="com.gildedrose.GildedRoseTest" time="0.002"/>
+  <testcase name="testQualityNoMoreThan50()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="testSulfurasQualSellInNegative()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="testDecSellInQuality()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
   <testcase name="testBckStageQualityMoreThan50()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="testBackStageQualityEqualsTo50()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="testBackStageSellInLessThan11()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
   <testcase name="testSulfurasConstantNegativeQuality()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
   <testcase name="testBckStageSellInNegativeQualityLessThan50()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
-  <testcase name="testAgedBrieSellInLessThan6()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="testAgedBrieSellInLessThan6()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="testBackStageSellInf11QualInf50()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
