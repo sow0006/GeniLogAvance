@@ -15,6 +15,13 @@ class GildedRose {
             item.updateQuality(1);
     } 
 
+    public static void decrementQualityNotMin(Item item){
+        if(item.quality > 0)
+            item.updateQuality(-1);
+    }
+
+    
+
     public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
             if (!items[i].name.equals("Aged Brie")
