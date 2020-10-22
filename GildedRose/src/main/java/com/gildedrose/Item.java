@@ -19,6 +19,6 @@ public class Item {
         return this.name + ", " + this.sellIn + ", " + this.quality;
     }
     public void updateQuality(int value){
-        this.quality = this.quality + value;
+        this.quality +=value;
     } 
 }
