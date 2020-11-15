@@ -6,13 +6,13 @@ import static org.hamcrest.Matchers.*;
 
 class GildedRoseTest {
 
-    private Item[] items = new Item[] { new Item("+5 Dexterity Vest", 10, 20) };
-    private GildedRose app = new GildedRose(items);
+  private Item[] items = new Item[] {new Item("+5 Dexterity Vest", 10, 20)};
+  private GildedRose app = new GildedRose(items);
 
     /* Tests sur produits normaux */
     @Test
     void testDecSellInQuality() {
-        app.updateQuality();
+    app.updateQuality();
         assertThat("diminution des valeurs sellIn et quality par le sytème à la fin de chaque journéé",
                 items[0].sellIn == 9 && items[0].quality == 19);
 

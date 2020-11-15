@@ -2,22 +2,22 @@
 <pmd xmlns="http://pmd.sourceforge.net/report/2.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd"
-    version="6.23.0" timestamp="2020-10-05T15:54:30.219">
-<file name="/home/local.isima.fr/ibsow1/Documents/GeniLogAvance/GeniLogAvance/GildedRose/src/main/java/com/gildedrose/GildedRose.java">
-<violation beginline="4" endline="4" begincolumn="12" endcolumn="16" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="com.gildedrose" class="GildedRose" variable="items" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+    version="6.23.0" timestamp="2020-11-15T14:56:38.141">
+<file name="/home/sow0006/GeniLogAvance/GeniLogAvance/GildedRose/src/main/java/com/gildedrose/GildedRose.java">
+<violation beginline="6" endline="6" begincolumn="12" endcolumn="16" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="com.gildedrose" class="GildedRose" variable="items" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 </violation>
-<violation beginline="24" endline="24" begincolumn="40" endcolumn="41" rule="AvoidLiteralsInIfCondition" ruleset="Error Prone" package="com.gildedrose" class="GildedRose" method="updateQuality" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#avoidliteralsinifcondition" priority="3">
+<violation beginline="16" endline="16" begincolumn="27" endcolumn="28" rule="AvoidLiteralsInIfCondition" ruleset="Error Prone" package="com.gildedrose" class="GildedRose" method="incrementQualityNotMax" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#avoidliteralsinifcondition" priority="3">
 Avoid using Literals in Conditional Statements
 </violation>
-<violation beginline="29" endline="29" begincolumn="52" endcolumn="53" rule="AvoidLiteralsInIfCondition" ruleset="Error Prone" package="com.gildedrose" class="GildedRose" method="updateQuality" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#avoidliteralsinifcondition" priority="3">
+<violation beginline="33" endline="33" begincolumn="35" endcolumn="36" rule="AvoidLiteralsInIfCondition" ruleset="Error Prone" package="com.gildedrose" class="GildedRose" method="updateItem" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#avoidliteralsinifcondition" priority="3">
 Avoid using Literals in Conditional Statements
 </violation>
-<violation beginline="59" endline="59" begincolumn="44" endcolumn="45" rule="AvoidLiteralsInIfCondition" ruleset="Error Prone" package="com.gildedrose" class="GildedRose" method="updateQuality" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#avoidliteralsinifcondition" priority="3">
+<violation beginline="34" endline="34" begincolumn="35" endcolumn="35" rule="AvoidLiteralsInIfCondition" ruleset="Error Prone" package="com.gildedrose" class="GildedRose" method="updateItem" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#avoidliteralsinifcondition" priority="3">
 Avoid using Literals in Conditional Statements
 </violation>
 </file>
-<file name="/home/local.isima.fr/ibsow1/Documents/GeniLogAvance/GeniLogAvance/GildedRose/src/main/java/com/gildedrose/Item.java">
+<file name="/home/sow0006/GeniLogAvance/GeniLogAvance/GildedRose/src/main/java/com/gildedrose/Item.java">
 <violation beginline="5" endline="5" begincolumn="19" endcolumn="22" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="com.gildedrose" class="Item" variable="name" externalInfoUrl="https://pmd.github.io/pmd-6.23.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 </violation>
