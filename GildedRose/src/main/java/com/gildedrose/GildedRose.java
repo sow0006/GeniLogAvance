@@ -1,6 +1,5 @@
 package com.gildedrose;
 
-import java.text.BreakIterator;
 
 class GildedRose {
 
